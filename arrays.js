@@ -1,8 +1,8 @@
 // Cria array de objetos.
 var myArrayOfObjects = [
-  { id: "18", label: "7" },
-  { id: "14", label: "3" },
-  { id: "16", label: "2" }
+  { id: 18, label: "7" },
+  { id: 14, label: "3" },
+  { id: 16, label: "2" }
 ];
 
 // Ordena array com objeos de menor indice para o maior.
@@ -11,7 +11,7 @@ myArrayOfObjects.sort((a, b) => {
 });
 
 // Procura indice do elemento de id '14'.
-var idToSearch = "1";
+var idToSearch = 14;
 var indexFound = myArrayOfObjects.findIndex(myObject => myObject.id === idToSearch);
 
 console.log("----------------------------------------------------");
@@ -32,3 +32,8 @@ if (indexFound > -1) {
 } else {
     console.log("Falha ao remover item. ID não encontrado.")
 }
+
+// Aplica reduce em array para acumular valor (no caso os valores somados
+// são os id's do elementos da array).
+var sumID = myArrayOfObjects.reduce((prev, cur) => prev + cur.id, 0);
+console.log("Soma de ID's usando reduce: " + sumID);
